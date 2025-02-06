@@ -1,7 +1,14 @@
-import React from "react";
+import { Metadata } from "next";
+
+import LoginForm from "@/features/Login/LoginForm";
+
+export const metadata: Metadata = {
+  title: "BCPay | Log In",
+  description: "Log in to your BCPay account",
+};
 
 function Page() {
-  return <div>Login Page</div>;
+  return <LoginForm />;
 }
 
 export default Page;
