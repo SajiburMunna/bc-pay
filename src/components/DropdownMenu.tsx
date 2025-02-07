@@ -21,7 +21,7 @@ import {
 import { cn } from "@/utilits";
 
 const menuStyles = cva(
-  "absolute z-10 overflow-auto rounded-[20px] border dark:border-[#313131] border-[#E4E4E2] bg-white p-[11px] focus:outline-none w-full",
+  "absolute z-10 overflow-auto rounded-[20px] border border-[#E4E4E2] bg-white p-[11px] focus:outline-none w-full",
   {
     variants: {
       position: {

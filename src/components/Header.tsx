@@ -23,7 +23,11 @@ function Header() {
   return (
     <header className="flex items-center justify-between px-6 py-4 bg-white">
       <p className="font-bold text-lg text-primary">BCPay</p>
-      <div>
+      <div className="flex items-center gap-2">
+        <span className="capitalize font-bold text-primary ml-1">
+          {role?.toLocaleUpperCase()}
+        </span>
+
         <DropdownMenu
           button={
             <button className="flex justify-center items-center text-white bg-primary h-10 w-10 px-4 py-4 rounded-full font-bold">

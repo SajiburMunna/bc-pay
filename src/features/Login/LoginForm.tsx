@@ -30,7 +30,8 @@ export default function LoginForm() {
 
   return (
     <div className="w-96 mx-auto bg-white p-8 rounded-lg shadow-lg">
-      <h1 className="text-3xl font-semibold mb-4 text-red-600">Log In</h1>
+      <h1 className="font-bold text-lg text-primary text-center">BCPay</h1>
+
       <form className="space-y-4" onSubmit={handleSubmit}>
         <InputField
           label="Usename"
@@ -38,6 +39,7 @@ export default function LoginForm() {
           name="username"
           onChange={handleChange}
         />
+
         <InputField
           label="Password"
           type="password"

@@ -1,6 +1,13 @@
+import { Metadata } from "next";
+
 import BCCalculations from "@/features/HR/BCCalculations";
 import Stats from "@/features/HR/Stats";
 import Violations from "@/features/HR/Violations";
+
+export const metadata: Metadata = {
+  title: "BCPay | HR",
+  description: "Log in to your BCPay account",
+};
 
 function Page() {
   return (
