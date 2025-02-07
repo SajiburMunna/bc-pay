@@ -1,12 +1,14 @@
-import React from "react";
+import BCCalculations from "@/features/HR/BCCalculations";
+import Stats from "@/features/HR/Stats";
+import Violations from "@/features/HR/Violations";
 
 function Page() {
   return (
-    <div className="text-center text-blue-400">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda
-      voluptas hic voluptatum molestiae repellat tempora cupiditate asperiores
-      nisi nobis ipsam odio perspiciatis, vitae commodi! Vitae, est ex. Quae,
-      dolorum?
+    <div className="space-y-6">
+      <h1 className="text-2xl font-semibold">Overview</h1>
+      <Stats />
+      <Violations />
+      <BCCalculations />
     </div>
   );
 }
