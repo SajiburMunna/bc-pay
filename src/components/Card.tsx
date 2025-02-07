@@ -3,21 +3,18 @@ import { ReactNode } from "react";
 
 import { cn } from "@/utilits";
 
-const cardVariants = cva(
-  "rounded-xl shadow-md transition-all border border-gray-200 bg-white",
-  {
-    variants: {
-      variant: {
-        default: "p-4",
-        outlined: "border-2 border-gray-300 p-4",
-        shadow: "shadow-lg p-4",
-      },
+const cardVariants = cva("rounded-xl transition-all bg-white", {
+  variants: {
+    variant: {
+      default: "p-4",
+      outlined: "border-2 border-gray-300 p-4",
+      shadow: "shadow-lg p-4",
     },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-);
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
 
 interface CardProps extends VariantProps<typeof cardVariants> {
   children: ReactNode;
