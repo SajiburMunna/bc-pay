@@ -45,13 +45,13 @@ function TeamContribution() {
           <div className="overflow-x-auto md:block hidden">
             <Table>
               <Table.Header>
-                <Table.Column className="rounded-l-full">
-                  Employee ID
+                <Table.Column className="font-bold">Employee ID</Table.Column>
+                <Table.Column className="font-bold">Name</Table.Column>
+                <Table.Column className="font-bold">
+                  Total Rules Break
                 </Table.Column>
-                <Table.Column>Name</Table.Column>
-                <Table.Column>Total Rules Break</Table.Column>
-                <Table.Column>Fine(BDT)</Table.Column>
-                <Table.Column className="rounded-r-full" align="end">
+                <Table.Column className="font-bold">Fine(BDT)</Table.Column>
+                <Table.Column className="font-bold" align="end">
                   Break Rules
                 </Table.Column>
               </Table.Header>
@@ -64,7 +64,7 @@ function TeamContribution() {
                   <Table.Column>{item.fine}</Table.Column>
                   <Table.Column align="end">
                     {item.rules.map((r, index) => {
-                      return <div key={index}>{r}</div>;
+                      return <div key={index}>{r} -</div>;
                     })}
                   </Table.Column>
                 </Table.Row>
