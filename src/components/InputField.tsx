@@ -4,7 +4,7 @@ import { forwardRef } from "react";
 import { cn } from "@/utilits";
 
 const inputClasses = cva(
-  "w-full dark:bg-[#000] dark:placeholder:text-[#ACB5BB] placeholder:text-[#00000075] placeholder:text-[13px] text-black dark:text-[#ACB5BB] text-sm border dark:border-[#313131] border-[#E4E4E2] pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:shadow-none h-[46px] bg-green",
+  "w-full bg-white placeholder:text-[#ACB5BB] placeholder:text-[13px] text-black text-sm border border-[#CED4DA] pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:shadow-none h-11",
   {
     variants: {
       rounded: {
