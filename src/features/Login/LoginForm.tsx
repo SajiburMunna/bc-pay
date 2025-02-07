@@ -26,8 +26,6 @@ export default function LoginForm() {
     router.push("/");
   };
 
-  console.log("formData", formData);
-
   return (
     <div className="w-96 mx-auto bg-white p-8 rounded-lg shadow-lg">
       <h1 className="font-bold text-lg text-primary text-center">BCPay</h1>
