@@ -25,6 +25,7 @@ BC Pay is a modern web-based system designed to digitize and streamline the comp
 ### Frontend:
 - Next.js ⚛️
 - Tailwind CSS 🎨
+- Typescript
 
 ### Deployment:
 - Hosted on **Vercel** 🚀
