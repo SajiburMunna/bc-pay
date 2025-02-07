@@ -1,4 +1,4 @@
-export const TeamContribution = [
+export const TeamContributionData = [
   {
     employee_id: "#01",
     name: "Aarav Rahman",
