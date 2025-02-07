@@ -20,7 +20,7 @@ function TeamContribution() {
       data={{
         "Employee ID": item.employee_id,
         Name: item.name,
-        "Total Rules Break": `$${item.rules_break}`,
+        "Total Rules Break": item.rules_break,
         "Fine (BDT)": item.fine,
         "Break Rules": item.rules.map((r, index) => {
           return <p key={index}>{r}</p>;

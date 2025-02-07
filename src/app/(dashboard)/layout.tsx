@@ -22,8 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
-        <Header />
-        <main className="px-6 py-4">{children}</main>
+        <div>
+          <Header />
+          <main className="px-6 py-4">{children}</main>
+        </div>
       </body>
     </html>
   );

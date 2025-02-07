@@ -20,7 +20,7 @@ const columnStyles = cva(
 );
 
 const rowStyles = cva("border-b-0 border-gray-700 last:border-b-0");
-const tableStyles = cva("w-full border-collapse");
+const tableStyles = cva("w-full border-collapse font-bold");
 
 interface TableProps {
   className?: string;
@@ -77,7 +77,6 @@ interface TableBlockRowProps {
 }
 
 const TableBlockRow = ({ data }: TableBlockRowProps) => {
-  console.log(data, "data----");
   return (
     <div className="flex flex-col p-4 border dark:border-[#313131] border-[#E4E4E2] rounded-md mb-2">
       {Object.entries(data).map(([key, value]) => (
@@ -97,11 +96,7 @@ interface TableHeaderProps {
 }
 
 const TableHeader = ({ children }: TableHeaderProps) => {
-  return (
-    <tr className="dark:bg-[#000000] dark:text-white bg-green border-none rounded-2xl">
-      {children}
-    </tr>
-  );
+  return <tr className="border-b rounded-2xl ">{children}</tr>;
 };
 
 Table.Row = TableRow;
