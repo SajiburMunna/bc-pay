@@ -1,8 +1,9 @@
+import React, { useState } from "react";
+
 import Button from "@/components/Button";
 import DatePicker from "@/components/DatePicker";
 import DropdownMenu from "@/components/DropdownMenu";
 import Modal from "@/components/Modal";
-import React, { useState } from "react";
 
 const options = [
   { value: "0", label: "Select a rule" },
@@ -66,6 +67,7 @@ function ReportForm({ isOpenReportForm, handleReportForm }: ReportFormProps) {
   const handleEmployeeOptionChange = (value: Option) => {
     setSelectedEmployeeOption(value);
   };
+
   return (
     <div>
       <Modal isOpen={isOpenReportForm} onClose={handleReportForm}>
@@ -73,40 +75,40 @@ function ReportForm({ isOpenReportForm, handleReportForm }: ReportFormProps) {
           <h2>Report Form</h2>
         </Modal.Header>
         <Modal.Body>
-          <form>
-            <div className="space-y-4">
-              <div>
-                <p className="mb-2 text-black">Select the rules</p>
-                <DropdownMenu
-                  options={options}
-                  onChange={handleRuleOptionChange}
-                  buttonText={selectedRuleOption.label}
-                />
-              </div>
-              <div>
-                <p className="mb-2 text-black">Select an Employee</p>
-                <DropdownMenu
-                  options={employees}
-                  onChange={handleEmployeeOptionChange}
-                  buttonText={selectedEmployeeOption.label}
-                />
-              </div>
-              <div>
-                <p className="mb-2 text-black">Date</p>
-
-                <DatePicker
-                  selectedDate={selectedDate}
-                  onChange={setSelectedDate}
-                />
-              </div>
-              <div className="flex items-center justify-end gap-3">
-                <Button onClick={handleReportForm} variant="secondary">
-                  Cancel
-                </Button>
-                <Button onClick={handleReportForm}>Submit</Button>
-              </div>
+          <div className="space-y-4">
+            <div>
+              <p className="mb-2 text-black">Select the rules</p>
+              <DropdownMenu
+                options={options}
+                onChange={handleRuleOptionChange}
+                buttonText={selectedRuleOption.label}
+              />
             </div>
-          </form>
+            <div>
+              <p className="mb-2 text-black">Select an Employee</p>
+              <DropdownMenu
+                options={employees}
+                onChange={handleEmployeeOptionChange}
+                buttonText={selectedEmployeeOption.label}
+              />
+            </div>
+            <div>
+              <p className="mb-2 text-black">Date</p>
+
+              <DatePicker
+                selectedDate={selectedDate}
+                onChange={setSelectedDate}
+              />
+            </div>
+            <div className="flex items-center justify-end gap-3">
+              <Button onClick={handleReportForm} variant="secondary">
+                Cancel
+              </Button>
+              <Button type="submit" onClick={handleReportForm}>
+                Submit
+              </Button>
+            </div>
+          </div>
         </Modal.Body>
       </Modal>
     </div>
