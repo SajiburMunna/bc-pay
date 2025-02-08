@@ -2,6 +2,14 @@ import { Card } from "@/components/Card";
 import Table from "@/components/Table";
 import { TopRuleBreakers } from "@/data/top-rule-breakers";
 
+const TableHeader = [
+  "Employee ID",
+  "Name",
+  "Team Lead",
+  "Break Rules",
+  "Fine (BDT)",
+];
+
 function TopRulesBreakers() {
   const BlockTableData = TopRuleBreakers.map((item, index) => (
     <Table.BlockRow
@@ -22,15 +30,15 @@ function TopRulesBreakers() {
         <div className="overflow-x-auto md:block hidden">
           <Table>
             <Table.Header>
-              <Table.Column className="font-bold">Employee ID</Table.Column>
-              <Table.Column className="font-bold">Name</Table.Column>
-              <Table.Column className="font-bold">Team Lead</Table.Column>
-              <Table.Column className="font-bold text-red-500">
-                Break Rules
-              </Table.Column>
-              <Table.Column className="font-bold" align="end">
-                Fine(BDT)
-              </Table.Column>
+              {TableHeader.map((header, index) => (
+                <Table.Column
+                  key={index}
+                  className="font-bold"
+                  align={index === 4 ? "end" : "start"}
+                >
+                  {header}
+                </Table.Column>
+              ))}
             </Table.Header>
 
             {TopRuleBreakers.map((item, index) => (

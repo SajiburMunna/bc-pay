@@ -33,7 +33,7 @@ export default function LoginForm() {
       <form className="space-y-4" onSubmit={handleSubmit}>
         <InputField
           label="Usename"
-          placeholder="Enter admin, hr, or teamlead"
+          placeholder="Enter ceo, hr, or teamlead"
           name="username"
           onChange={handleChange}
         />

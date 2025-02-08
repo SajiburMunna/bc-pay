@@ -3,6 +3,14 @@ import { Card } from "@/components/Card";
 import Table from "@/components/Table";
 import { BCCalculationsData } from "@/data/bc-calculation";
 
+const TableHeader = [
+  "Employee ID",
+  "Name",
+  "Total Rules Break",
+  "Break Rules",
+  "Fine (BDT)",
+];
+
 function BCCalculations() {
   const BlockTableData = BCCalculationsData.map((item, index) => (
     <Table.BlockRow
@@ -29,17 +37,15 @@ function BCCalculations() {
           <div className="overflow-x-auto md:block hidden">
             <Table>
               <Table.Header>
-                <Table.Column className="font-bold">Employee ID</Table.Column>
-                <Table.Column className="font-bold">Name</Table.Column>
-                <Table.Column className="font-bold">
-                  Total Rules Break
-                </Table.Column>
-                <Table.Column className="font-bold" align="end">
-                  Break Rules
-                </Table.Column>
-                <Table.Column className="font-bold" align="end">
-                  Fine(BDT)
-                </Table.Column>
+                {TableHeader.map((item, index) => (
+                  <Table.Column
+                    key={index}
+                    className="font-bold"
+                    align={index === 3 || index === 4 ? "end" : "start"}
+                  >
+                    {item}
+                  </Table.Column>
+                ))}
               </Table.Header>
 
               {BCCalculationsData.map((item, index) => (

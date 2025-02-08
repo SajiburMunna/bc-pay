@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 
 import Button from "@/components/Button";
@@ -6,6 +7,8 @@ import { Card } from "@/components/Card";
 import Table from "@/components/Table";
 import { TeamContributionData } from "@/data/team-contribution-data";
 import ReportForm from "./ReportForm";
+
+const TableHeader = ["Employee ID", "Date", "Name", "Fine(BDT)", "Break Rules"];
 
 function TeamContribution() {
   const [isOpenReportForm, setIsOpenReportForm] = useState(false);
@@ -33,9 +36,6 @@ function TeamContribution() {
     <div>
       <div className="mb-4">
         <h1 className="text-2xl font-semibold">Welcome Team Lead</h1>
-        <p className="text-gray-600">
-          This is a simple page for the team lead role.
-        </p>
       </div>
       <Card.Root>
         <Card.Header className="flex justify-between items-center">
@@ -46,13 +46,15 @@ function TeamContribution() {
           <div className="overflow-x-auto md:block hidden">
             <Table>
               <Table.Header>
-                <Table.Column className="font-bold">Employee ID</Table.Column>
-                <Table.Column className="font-bold">Date</Table.Column>
-                <Table.Column className="font-bold">Name</Table.Column>
-                <Table.Column className="font-bold">Fine(BDT)</Table.Column>
-                <Table.Column className="font-bold" align="end">
-                  Break Rules
-                </Table.Column>
+                {TableHeader.map((header, index) => (
+                  <Table.Column
+                    key={index}
+                    className="font-bold"
+                    align={index === 4 ? "end" : "start"}
+                  >
+                    {header}
+                  </Table.Column>
+                ))}
               </Table.Header>
 
               {TeamContributionData.map((item, index) => (

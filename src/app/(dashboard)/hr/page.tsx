@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
-import BCCalculations from "@/features/HR/BCCalculations";
-import Stats from "@/features/HR/Stats";
-import Violations from "@/features/HR/Violations";
+import BCCalculations from "@/features/Hr/BCCalculations";
+import Stats from "@/features/Hr/Stats";
+import Violations from "@/features/Hr/Violations";
 
 export const metadata: Metadata = {
   title: "BCPay | HR",

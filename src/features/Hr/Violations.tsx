@@ -2,6 +2,8 @@ import { Card } from "@/components/Card";
 import Table from "@/components/Table";
 import { ViolationsList } from "@/data/vailatiolnslist";
 
+const TableHeader = ["Employee ID", "Name", "Rule", "Date", "Fine (BDT)"];
+
 function Violations() {
   const BlockTableData = ViolationsList.map((item, index) => (
     <Table.BlockRow
@@ -23,13 +25,15 @@ function Violations() {
           <div className="overflow-x-auto md:block hidden">
             <Table>
               <Table.Header>
-                <Table.Column className="font-bold">Employee ID</Table.Column>
-                <Table.Column className="font-bold">Name</Table.Column>
-                <Table.Column className="font-bold">Rule</Table.Column>
-                <Table.Column className="font-bold">Date</Table.Column>
-                <Table.Column className="font-bold" align="end">
-                  Fine(BDT)
-                </Table.Column>
+                {TableHeader.map((item, index) => (
+                  <Table.Column
+                    key={index}
+                    className="font-bold"
+                    align={index === 4 ? "end" : "start"}
+                  >
+                    {item}
+                  </Table.Column>
+                ))}
               </Table.Header>
 
               {ViolationsList.map((item, index) => (
