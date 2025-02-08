@@ -45,7 +45,7 @@ export default function LoginForm() {
           name="password"
           onChange={handleChange}
         />
-        <Button className="w-full" actionType="submit">
+        <Button className="w-full" type="submit">
           Log In
         </Button>
       </form>

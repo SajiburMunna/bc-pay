@@ -4,8 +4,8 @@ import { useState } from "react";
 import Button from "@/components/Button";
 import { Card } from "@/components/Card";
 import Table from "@/components/Table";
-import Modal from "@/components/Modal";
 import { TeamContributionData } from "@/data/team-contribution-data";
+import ReportForm from "./ReportForm";
 
 function TeamContribution() {
   const [isOpenReportForm, setIsOpenReportForm] = useState(false);
@@ -28,6 +28,7 @@ function TeamContribution() {
       }}
     />
   ));
+
   return (
     <div>
       <div className="mb-4">
@@ -46,10 +47,8 @@ function TeamContribution() {
             <Table>
               <Table.Header>
                 <Table.Column className="font-bold">Employee ID</Table.Column>
+                <Table.Column className="font-bold">Date</Table.Column>
                 <Table.Column className="font-bold">Name</Table.Column>
-                <Table.Column className="font-bold">
-                  Total Rules Break
-                </Table.Column>
                 <Table.Column className="font-bold">Fine(BDT)</Table.Column>
                 <Table.Column className="font-bold" align="end">
                   Break Rules
@@ -59,8 +58,8 @@ function TeamContribution() {
               {TeamContributionData.map((item, index) => (
                 <Table.Row key={index}>
                   <Table.Column>{item.employee_id}</Table.Column>
+                  <Table.Column>{item.date}</Table.Column>
                   <Table.Column>{item.name}</Table.Column>
-                  <Table.Column>{item.rules_break}</Table.Column>
                   <Table.Column>{item.fine}</Table.Column>
                   <Table.Column align="end">
                     {item.rules.map((r, index) => {
@@ -74,17 +73,10 @@ function TeamContribution() {
           <div className="block md:hidden">{BlockTableData}</div>
         </Card.Body>
       </Card.Root>
-      <Modal isOpen={isOpenReportForm} onClose={handleReportForm}>
-        <Modal.Header>
-          <h2>Report Form</h2>
-        </Modal.Header>
-        <Modal.Body>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque velit
-          eveniet fugiat doloribus esse assumenda ducimus, quis alias, debitis
-          odit nemo placeat necessitatibus obcaecati laboriosam corrupti sunt
-          adipisci aperiam sit.
-        </Modal.Body>
-      </Modal>
+      <ReportForm
+        isOpenReportForm={isOpenReportForm}
+        handleReportForm={handleReportForm}
+      />
     </div>
   );
 }

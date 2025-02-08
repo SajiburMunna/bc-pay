@@ -121,7 +121,7 @@ const DropdownMenu = <T,>({
         {buttonText && (
           <button
             className={cn(
-              "w-full flex items-center justify-between border border-[#E4E4E2] dark:border-[#313131] bg-white px-4 py-[10px] h-[36px] rounded-[30px] dark:text-white text-black",
+              "w-full flex items-center justify-between border border-[#E4E4E2] dark:border-[#313131] bg-white px-4 py-[10px] h-[40px] rounded-[30px]   text-black",
               buttonClassName
             )}
           >
@@ -149,7 +149,7 @@ const DropdownMenu = <T,>({
             <li
               key={String(option.value)}
               role="menuitem"
-              className="cursor-pointer dark:text-white text-black flex gap-2 text-sm items-center rounded-[30px] px-[15px] py-[7px] transition-all hover:bg-primary hover:text-white focus:bg-primary-50 w-full "
+              className="cursor-pointer text-black flex gap-2 text-sm items-center rounded-[30px] px-[15px] py-[7px] transition-all w-full hover:text-primary"
               onClick={() => handleOptionClick(option)}
             >
               {option.leading && <>{option.leading}</>}
