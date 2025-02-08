@@ -15,7 +15,7 @@ BC Pay is a modern web-based system designed to digitize and streamline the comp
 - 🔐 **Authentication**: login and role-based access.
 
 ## User Credentials For Login
-| Role  | Username | Password |
+| Role  | Username | Password (Not Mandatory) |
 |-------|---------|----------|
 | CEO   | ceo     | 123      |
 | HR    | hr      | 123      |
